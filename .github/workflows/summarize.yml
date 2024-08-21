@@ -1,9 +1,9 @@
 name: summarize
 
 on:
-  schedule:
-    # JST 09:00 every weekday
-    - cron: "0 0 * * 1-5"
+  # schedule:
+  # JST 09:00 every weekday
+  # - cron: "0 0 * * 1-5"
   workflow_dispatch:
 
 jobs:
