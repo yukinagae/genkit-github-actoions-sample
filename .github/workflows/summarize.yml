@@ -1,0 +1,17 @@
+name: summarize
+
+on:
+  schedule:
+    # JST 09:00 every weekday
+    - cron: "0 0 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set environment variables
+        run: echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> ./.env
+      - name: Summarize content
+        run: npm run script https://en.wikipedia.org/wiki/Haiku
