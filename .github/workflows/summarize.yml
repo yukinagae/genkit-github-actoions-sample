@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Summarize content
-        run: npm run script https://en.wikipedia.org/wiki/Haiku > log.txt
+        run: npm run script https://www.githubstatus.com/ > log.txt
       - name: Archive result log
         uses: actions/upload-artifact@v4
         with:
